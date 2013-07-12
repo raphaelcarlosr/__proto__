@@ -1,6 +1,10 @@
 ﻿/**
+* @class Object Classe base do framework
+* @namespace Object
+* @singleton
+*/
+/**
 * Object values, similar to Object.keys
-* @class Object
 * @method
 * @param {object} obj Object to get values
 * @return {array} Array object values
@@ -15,8 +19,12 @@ Object.values = function (obj) {
     return vals;
 }
 /**
+* @class String String.prototype
+* @namespace String
+* @singleton
+*/
+/**
 * Remove any underscores or dashes and convert a string into camel casing.
-* @class String
 * @method
 * @return {string} 
 * @example
@@ -37,7 +45,6 @@ Object.defineProperty(String.prototype, "camelize", {
 });
 /**
 * Capitalizes the first character of a string.
-* @class String
 * @method
 * @return {string} 
 * @example
@@ -52,7 +59,6 @@ Object.defineProperty(String.prototype, "capitalize", {
 });
 /**
 * Converts all adjacent whitespace characters to a single space. 
-* @class String
 * @method
 * @return {string} 
 * @example 
@@ -66,7 +72,6 @@ Object.defineProperty(String.prototype, "collapseWhitespace", {
 });
 /**
 * Returns true if the string contains
-* @class String
 * @method
 * @return {boolean} 
 * @example
@@ -80,7 +85,6 @@ Object.defineProperty(String.prototype, "contains", {
 });
 /**
 * Returns a converted camel cased string into a string delimited by dashes.
-* @class String
 * @method
 * @return {string} 
 * @example
@@ -94,7 +98,6 @@ Object.defineProperty(String.prototype, "dasherize", {
 });
 /**
 * Decodes HTML entities into their string representation.
-* @class String
 * @method
 * @return {string} 
 * @example
@@ -119,7 +122,6 @@ Object.defineProperty(String.prototype, "decodeHtmlEntities", {
 });
 /**
 * Returns true if the string ends with
-* @class String
 * @method
 * @return {boolean} 
 * @example
@@ -134,7 +136,6 @@ Object.defineProperty(String.prototype, "endsWith", {
 });
 /**
 * Escapes the html.
-* @class String
 * @method
 * @return {string} 
 * @example
@@ -148,7 +149,6 @@ Object.defineProperty(String.prototype, "escapeHTML", {
 });
 /**
 * Return true if the string contains only letters.
-* @class String
 * @method
 * @return {boolean} 
 * @example
@@ -164,7 +164,6 @@ Object.defineProperty(String.prototype, "isAlpha", {
 });
 /**
 * Return true if the string contains only letters and numbers
-* @class String
 * @method
 * @return {boolean} 
 * @example
@@ -182,7 +181,6 @@ Object.defineProperty(String.prototype, "isAlphaNumeric", {
 });
 /**
 * Return true if the string is solely composed of whitespace or is null/undefined.
-* @class String
 * @method
 * @return {boolean} 
 * @example
@@ -197,7 +195,6 @@ Object.defineProperty(String.prototype, "isEmpty", {
 });
 /**
 * Return true if the character or string is lowercase
-* @class String
 * @method
 * @return {boolean}
 * @example 
@@ -212,7 +209,6 @@ Object.defineProperty(String.prototype, "isLower", {
 });
 /**
 * Return true if the string only contains digits
-* @class String
 * @method
 * @return {boolean}
 * @example 
@@ -227,7 +223,6 @@ Object.defineProperty(String.prototype, "isNumeric", {
 });
 /**
 * Returns true if the character or string is uppercase
-* @class String
 * @method
 * @return {boolean} 
 * @example
@@ -242,7 +237,6 @@ Object.defineProperty(String.prototype, "isUpper", {
 });
 /**
 * Return the substring denoted by n positive left-most characters.
-* @class String
 * @method
 * @return {string} 
 * @example
@@ -261,7 +255,6 @@ Object.defineProperty(String.prototype, "left", {
 });
 /**
 * Returns an array of native strings representing lines with whitespace trimmed.
-* @class String
 * @method
 * @return {array} 
 * @example
@@ -281,7 +274,6 @@ Object.defineProperty(String.prototype, "lines", {
 });
 /**
 * Pads the string in the center with specified character
-* @class String
 * @method
 * @return {string} 
 * @example
@@ -302,7 +294,6 @@ Object.defineProperty(String.prototype, "pad", {
 });
 /**
 * Left pads the string.
-* @class String
 * @method
 * @return {string} 
 * @example
@@ -318,7 +309,6 @@ Object.defineProperty(String.prototype, "padLeft", {
 });
 /**
 * Right pads the string.
-* @class String
 * @method
 * @return {string} 
 * @example
@@ -335,7 +325,6 @@ Object.defineProperty(String.prototype, "padRight", {
 });
 /**
 * Return the new string with all occurrences of ss replaced with newstr.
-* @class String
 * @method
 * @return {string} 
 * @example
@@ -350,7 +339,6 @@ Object.defineProperty(String.prototype, "replaceAll", {
 });
 /**
 * Return the substring denoted by n positive right-most characters.
-* @class String
 * @method
 * @return {string} 
 * @example
@@ -368,7 +356,6 @@ Object.defineProperty(String.prototype, "right", {
 });
 /**
 * Converts the text into a valid url slug.
-* @class String
 * @method
 * @return {string} 
 * @example
@@ -384,7 +371,6 @@ Object.defineProperty(String.prototype, "slugify", {
 });
 /**
 * Return true if the string starts with prefix.
-* @class String
 * @method
 * @return {boolean} 
 * @example
@@ -398,7 +384,6 @@ Object.defineProperty(String.prototype, "startsWith", {
 });
 /**
 * Strip all of the punctuation.
-* @class String
 * @method
 * @return {string} 
 * @example
@@ -412,7 +397,6 @@ Object.defineProperty(String.prototype, "stripPunctuation", {
 });
 /**
 * Strip all of the HTML tags or tags specified by the parameters.
-* @class String
 * @method
 * @return {string} 
 * @example
@@ -431,7 +415,6 @@ Object.defineProperty(String.prototype, "stripTags", {
 });
 /**
 * Takes a string and interpolates the values. Defaults to {{ and }} for Mustache compatible templates
-* @class String
 * @method
 * @return {string} 
 * @example
@@ -459,7 +442,6 @@ Object.defineProperty(String.prototype, "template", {
 });
 /**
 * Returns a string repeated n times.
-* @class String
 * @method
 * @return {string} 
 * @example
@@ -473,7 +455,6 @@ Object.defineProperty(String.prototype, "repeat", {
 });
 /**
 * Converts a a logical truth string to boolean. That is: true, 1, 'true', 'on', or 'yes'.
-* @class String
 * @method
 * @return {boolean} 
 * @example
@@ -489,7 +470,6 @@ Object.defineProperty(String.prototype, "toBoolean", {
 });
 /**
 * Return the float value, wraps parseFloat.
-* @class String
 * @method
 * @return {float} 
 * @example
@@ -506,7 +486,6 @@ Object.defineProperty(String.prototype, "toFloat", {
 });
 /**
 * Return the number value in integer form. Wrapper for parseInt(). Can also parse hex values.
-* @class String
 * @method
 * @return {int} 
 * @example
@@ -521,7 +500,6 @@ Object.defineProperty(String.prototype, "toInt", {
 });
 /**
 * Return the string with leading and trailing whitespace removed. Reverts to native trim() if it exists.
-* @class String
 * @method
 * @return {string} 
 * @example
@@ -535,7 +513,6 @@ Object.defineProperty(String.prototype, "trim", {
 });
 /**
 * Return the string with leading and whitespace removed
-* @class String
 * @method
 * @return {string} 
 * @example
@@ -549,7 +526,6 @@ Object.defineProperty(String.prototype, "trimLeft", {
 });
 /**
 * Return the string with trailing whitespace removed.
-* @class String
 * @method
 * @return {string} 
 * @example
@@ -563,7 +539,6 @@ Object.defineProperty(String.prototype, "trimRight", {
 });
 /**
 * Truncates the string, accounting for word placement and character count.
-* @class String
 * @method
 * @return {string} 
 * @example
@@ -592,7 +567,6 @@ Object.defineProperty(String.prototype, "truncate", {
 });
 /**
 * Returns converted camel cased string into a string delimited by underscores.
-* @class String
 * @method
 * @return {string} 
 * @example
@@ -611,7 +585,6 @@ Object.defineProperty(String.prototype, "underscore", {
 });
 /**
 * Unescapes the html.
-* @class String
 * @method
 * @return {string} 
 * @example
@@ -637,7 +610,6 @@ Object.defineProperty(String.prototype, "unescapeHTML", {
 });
 /**
 * Convert all break lines in <br/>
-* @class String
 * @method
 * @return {string} 
 * @example
@@ -652,7 +624,6 @@ Object.defineProperty(String.prototype, "nl2br", {
 /**
 * String that contains placeholders and some parameters, and it replaces the placeholders from the template string with the 
 * parameter values. It is similar to String.template.
-* @class String
 * @method
 * @return {string} 
 * @example
@@ -680,7 +651,6 @@ Object.defineProperty(String.prototype, "format", {
 });
 /**
 * Convert string to number, int ou double
-* @class String
 * @method
 * @return {int|float} 
 * @example
@@ -726,10 +696,13 @@ Object.defineProperty(Array.prototype, "contains", {
         return false;
     }
 });
-
+/**
+* @class Array Array.prototype
+* @namespace Array
+* @singleton
+*/
 /**
 * Return agruped array 
-* @class Array
 * @method
 * @return {array} 
 * @example
