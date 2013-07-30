@@ -1,4 +1,5 @@
-﻿/**
+'use strict';
+/**
 * @class Object Classe base do framework
 * @namespace Object
 * @singleton
