@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 ﻿/**
 * @class Object Native Object
 * @namespace __proto__
+=======
+'use strict';
+/**
+* @class Object Classe base do framework
+* @namespace Object
+>>>>>>> 6e165aaae6268ae3a00de8e5a75afbeda713e56f
 * @singleton
 */
 /**
