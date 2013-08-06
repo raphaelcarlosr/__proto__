@@ -1,6 +1,6 @@
 ﻿/**
-* @class Object Classe base do framework
-* @namespace Object
+* @class Object Native Object
+* @namespace __proto__
 * @singleton
 */
 /**
@@ -8,6 +8,9 @@
 * @method
 * @param {object} obj Object to get values
 * @return {array} Array object values
+* @example 
+*   var obj = {a:1, b:2, c:3}, values = Object.values(obj);
+*   //[1, 2, 3];
 */
 Object.values = function (obj) {
     var vals = [];
@@ -20,12 +23,12 @@ Object.values = function (obj) {
 }
 /**
 * @class String String.prototype
-* @namespace String
+* @namespace __proto__
 * @singleton
 */
 /**
 * Remove any underscores or dashes and convert a string into camel casing.
-* @method
+* @method 
 * @return {string} 
 * @example
 *   'data_rate'.camelize(); //'dataRate'
@@ -34,6 +37,7 @@ Object.values = function (obj) {
 *   '_car_speed_'.camelize(); //'carSpeed'
 *   'yes_we_can'.camelize(); //'yesWeCan'
 */
+/*String.prototype.camelize = null;*/
 Object.defineProperty(String.prototype, "camelize", {
     enumerable: false, configurable: false, writable: false,
     value: function () {
@@ -51,6 +55,7 @@ Object.defineProperty(String.prototype, "camelize", {
 *   'jon'.capitalize(); //Jon
 *   'jon, peter'.capitalize(); //Jon, Peter
 */
+/*String.prototype.capitalize = null;*/
 Object.defineProperty(String.prototype, "capitalize", {
     enumerable: false, configurable: false, writable: false,
     value: function () {
@@ -64,6 +69,7 @@ Object.defineProperty(String.prototype, "capitalize", {
 * @example 
 *   '  String   \t libraries are   \n\n\t fun\n!  '.collapseWhitespace(); //'String libraries are fun !'
 */
+/*String.prototype.collapseWhitespace = null;*/
 Object.defineProperty(String.prototype, "collapseWhitespace", {
     enumerable: false, configurable: false, writable: false,
     value: function () {
@@ -77,6 +83,7 @@ Object.defineProperty(String.prototype, "collapseWhitespace", {
 * @example
 *   'JavaScript is one of the best languages!'.contains('one'); //true
 */
+/*String.prototype.contains = null;*/
 Object.defineProperty(String.prototype, "contains", {
     enumerable: false, configurable: false, writable: false,
     value: function (s) {
@@ -90,6 +97,7 @@ Object.defineProperty(String.prototype, "contains", {
 * @example
 *   'dataRate'.dasherize() //'data-rate'
 */
+/*String.prototype.dasherize = null;*/
 Object.defineProperty(String.prototype, "dasherize", {
     enumerable: false, configurable: false, writable: false,
     value: function () {
@@ -103,6 +111,7 @@ Object.defineProperty(String.prototype, "dasherize", {
 * @example
 *   'Ken Thompson &amp; Dennis Ritchie'.decodeHtmlEntities() //'Ken Thompson & Dennis Ritchie'
 */
+/*String.prototype.decodeHtmlEntities = null;*/
 Object.defineProperty(String.prototype, "decodeHtmlEntities", {
     enumerable: false, configurable: false, writable: false,
     value: function (quote_style) { //from php.js
@@ -127,6 +136,7 @@ Object.defineProperty(String.prototype, "decodeHtmlEntities", {
 * @example
 *   "hello jon".endsWith('jon'); //true
 */
+/*String.prototype.endsWith = null;*/
 Object.defineProperty(String.prototype, "endsWith", {
     enumerable: false, configurable: false, writable: false,
     value: function (suffix) {
@@ -141,6 +151,7 @@ Object.defineProperty(String.prototype, "endsWith", {
 * @example
 *   '<div>hi</div>'.escapeHTML(); //&lt;div&gt;hi&lt;/div&gt;
 */
+/*String.prototype.escapeHTML = null;*/
 Object.defineProperty(String.prototype, "escapeHTML", {
     enumerable: false, configurable: false, writable: false,
     value: function () { //from underscore.string
@@ -156,6 +167,7 @@ Object.defineProperty(String.prototype, "escapeHTML", {
 *   'fdafaf3'.isAlpha(); //false
 *   'dfdf--dfd'.isAlpha(); //false
 */
+/*String.prototype.isAlpha = null;*/
 Object.defineProperty(String.prototype, "isAlpha", {
     enumerable: false, configurable: false, writable: false,
     value: function () {
@@ -173,6 +185,7 @@ Object.defineProperty(String.prototype, "isAlpha", {
 *   "Infinity".isAlphaNumeric(); //true
 *   "-Infinity".isAlphaNumeric(); //false
 */
+/*String.prototype.isAlphaNumeric = null;*/
 Object.defineProperty(String.prototype, "isAlphaNumeric", {
     enumerable: false, configurable: false, writable: false,
     value: function () {
@@ -187,6 +200,7 @@ Object.defineProperty(String.prototype, "isAlphaNumeric", {
 *   ' '.isEmpty(); //true
 *   ' '.isEmpty(' '); //true
 */
+/*String.prototype.isEmpty = null;*/
 Object.defineProperty(String.prototype, "isEmpty", {
     enumerable: false, configurable: false, writable: false,
     value: function () {
@@ -201,6 +215,7 @@ Object.defineProperty(String.prototype, "isEmpty", {
 *   'a'.isLower(); //true
 *   'B'.isLower(); //false
 */
+/*String.prototype.isLower = null;*/
 Object.defineProperty(String.prototype, "isLower", {
     enumerable: false, configurable: false, writable: false,
     value: function () {
@@ -215,6 +230,7 @@ Object.defineProperty(String.prototype, "isLower", {
 *   "3".isNumeric(); //true
 *   "NaN".isNumeric(); //false
 */
+/*String.prototype.isNumeric = null;*/
 Object.defineProperty(String.prototype, "isNumeric", {
     enumerable: false, configurable: false, writable: false,
     value: function () { 
@@ -229,6 +245,7 @@ Object.defineProperty(String.prototype, "isNumeric", {
 *   'a'.isUpper() //false
 *   'B'.isUpper() //true
 */
+/*String.prototype.isUpper = null;*/
 Object.defineProperty(String.prototype, "isUpper", {
     enumerable: false, configurable: false, writable: false,
     value: function () {
@@ -243,6 +260,7 @@ Object.defineProperty(String.prototype, "isUpper", {
 *   'My name is JP'.left(2); //'My'
 *   'My name is JP'.left(-2); //'JP', same as right(2)
 */
+/*String.prototype.left = null;*/
 Object.defineProperty(String.prototype, "left", {
     enumerable: false, configurable: false, writable: false,
     value: function (N) {
@@ -258,11 +276,12 @@ Object.defineProperty(String.prototype, "left", {
 * @method
 * @return {array} 
 * @example
-*   var lines = S('1 Infinite Loop\r\nCupertino, CA').lines();
+*   var lines = S('1 Infinite Loop\r\nCupertino, CA').toLines();
 *   lines[0] // '1 Infinite Loop'
 *   lines[1] // 'Cupertino, CA'
 */
-Object.defineProperty(String.prototype, "lines", {
+/*String.prototype.toLines = null;*/
+Object.defineProperty(String.prototype, "toLines", {
     enumerable: false, configurable: false, writable: false,
     value: function () {
         var lines = this.split('\n');
@@ -279,8 +298,9 @@ Object.defineProperty(String.prototype, "lines", {
 * @example
 *   'hello'.pad(10)   //'   hello  '
 *   'hey'.pad(7, '-') //'--hey--'
-* @see //https://github.com/component/pad
+* @ref https://github.com/component/pad
 */
+/*String.prototype.pad = null;*/
 Object.defineProperty(String.prototype, "pad", {
     enumerable: false, configurable: false, writable: false,
     value: function (len, ch) {
@@ -299,6 +319,7 @@ Object.defineProperty(String.prototype, "pad", {
 * @example
 *   'hello'.padLeft(10)   //'     hello'
 */
+/*String.prototype.padLeft = null;*/
 Object.defineProperty(String.prototype, "padLeft", {
     enumerable: false, configurable: false, writable: false,
     value: function (len, ch) { //https://github.com/component/pad
@@ -313,8 +334,9 @@ Object.defineProperty(String.prototype, "padLeft", {
 * @return {string} 
 * @example
 *   'hello'.padRight(10, '.') //'hello.....'
-* @see https://github.com/component/pad
+* @ref https://github.com/component/pad
 */
+/*String.prototype.padRight = null;*/
 Object.defineProperty(String.prototype, "padRight", {
     enumerable: false, configurable: false, writable: false,
     value: function (len, ch) { 
@@ -331,6 +353,7 @@ Object.defineProperty(String.prototype, "padRight", {
 *   ' does IT work? '.replaceAll(' ', '_'); //'_does_IT_work?_'
 *   'Yes it does!'.replaceAll(' ', ''); //'Yesitdoes!'
 */
+/*String.prototype.replaceAll = null;*/
 Object.defineProperty(String.prototype, "replaceAll", {
     enumerable: false, configurable: false, writable: false,
     value: function (ss, r) {
@@ -344,6 +367,7 @@ Object.defineProperty(String.prototype, "replaceAll", {
 * @example
 *   'My name is JP'.right(-2); //'My', same as left(2)
 */
+/*String.prototype.right = null;*/
 Object.defineProperty(String.prototype, "right", {
     enumerable: false, configurable: false, writable: false,
     value: function (N) {
@@ -361,6 +385,7 @@ Object.defineProperty(String.prototype, "right", {
 * @example
 *   'Global Thermonuclear Warfare'.slugify() // 'global-thermonuclear-warfare'
 */
+/*String.prototype.slugify = null;*/
 Object.defineProperty(String.prototype, "slugify", {
     enumerable: false, configurable: false, writable: false,
     value: function () {
@@ -376,6 +401,7 @@ Object.defineProperty(String.prototype, "slugify", {
 * @example
 *   "JP is a software engineer".startsWith("JP"); //true
 */
+/*String.prototype.startsWith = null;*/
 Object.defineProperty(String.prototype, "startsWith", {
     enumerable: false, configurable: false, writable: false,
     value: function(prefix) {
@@ -389,6 +415,7 @@ Object.defineProperty(String.prototype, "startsWith", {
 * @example
 *   'My, st[ring] *full* of %punct)'.stripPunctuation(); //My string full of punct
 */
+/*String.prototype.stripPunctuation = null;*/
 Object.defineProperty(String.prototype, "stripPunctuation", {
     enumerable: false, configurable: false, writable: false,
     value: function() {
@@ -403,6 +430,7 @@ Object.defineProperty(String.prototype, "stripPunctuation", {
 *   '<p>just <b>some</b> text</p>'.stripTags() //'just some text'
 *   '<p>just <b>some</b> text</p>'.stripTags('p') //'just <b>some</b> text'
 */
+/*String.prototype.stripTags = null;*/
 Object.defineProperty(String.prototype, "stripTags", {
     enumerable: false, configurable: false, writable: false,
     value: function() { //from sugar.js
@@ -422,6 +450,7 @@ Object.defineProperty(String.prototype, "stripTags", {
 *   var values = {name: 'JP', 'date-year': 2013}
 *   str.template(values); //'Hello JP! How are you doing during the year of 2013?'
 */
+/*String.prototype.template = null;*/
 Object.defineProperty(String.prototype, "template", {
     enumerable: false, configurable: false, writable: false,
     value: function(values, opening, closing) {
@@ -447,6 +476,7 @@ Object.defineProperty(String.prototype, "template", {
 * @example
 *   '*'.repeat(3) //'***'
 */
+/*String.prototype.repeat = null;*/
 Object.defineProperty(String.prototype, "repeat", {
     enumerable: false, configurable: false, writable: false,
     value: function(n) {
@@ -461,6 +491,7 @@ Object.defineProperty(String.prototype, "repeat", {
 *   'true'.toBoolean() //true
 *   'ON'.toBoolean() //true
 */
+/*String.prototype.toBoolean = null;*/
 Object.defineProperty(String.prototype, "toBoolean", {
     enumerable: false, configurable: false, writable: false,
     value: function() {
@@ -476,6 +507,7 @@ Object.defineProperty(String.prototype, "toBoolean", {
 *   '5'.toFloat() // 5
 *   '3.45522222333232'.toFloat(2) // 3.46
 */
+/*String.prototype.toFloat = null;*/
 Object.defineProperty(String.prototype, "toFloat", {
     enumerable: false, configurable: false, writable: false,
     value: function(precision) {
@@ -492,6 +524,7 @@ Object.defineProperty(String.prototype, "toFloat", {
 *   '5'.toInt(); //5
 *   '0xff'.toInt() //255
 */
+/*String.prototype.toInt = null;*/
 Object.defineProperty(String.prototype, "toInt", {
     enumerable: false, configurable: false, writable: false,
     value: function() {
@@ -505,6 +538,7 @@ Object.defineProperty(String.prototype, "toInt", {
 * @example
 *   '\nhello\r\n'.trim(); //'hello'
 */
+/*String.prototype.trim = null;*/
 Object.defineProperty(String.prototype, "trim", {
     enumerable: false, configurable: false, writable: false,
     value: String.prototype.trim || function() {
@@ -518,6 +552,7 @@ Object.defineProperty(String.prototype, "trim", {
 * @example
 *   '  How are you?'.trimLeft(); //'How are you?';
 */
+/*String.prototype.trimLeft = null;*/
 Object.defineProperty(String.prototype, "trimLeft", {
     enumerable: false, configurable: false, writable: false,
     value: String.prototype.trimLeft||function() {
@@ -531,6 +566,7 @@ Object.defineProperty(String.prototype, "trimLeft", {
 * @example
 *   'How are you?   '.trimRight(); //'How are you?';
 */
+/*String.prototype.trimRight = null;*/
 Object.defineProperty(String.prototype, "trimRight", {
     enumerable: false, configurable: false, writable: false,
     value: String.prototype.trimRight||function() {
@@ -545,6 +581,7 @@ Object.defineProperty(String.prototype, "trimRight", {
 *   'this is some long text'.truncate(7) //'this is...'
 *   'this is some long text'.truncate(14, ' read more') //'this is some read more'
 */
+/*String.prototype.truncate = null;*/
 Object.defineProperty(String.prototype, "truncate", {
     enumerable: false, configurable: false, writable: false,
     value: function(length, pruneStr) { //from underscore.string, author: github.com/rwz
@@ -571,8 +608,9 @@ Object.defineProperty(String.prototype, "truncate", {
 * @return {string} 
 * @example
 *   'dataRate'.underscore(); //'data_rate'
-* #modified from https://github.com/epeli/underscore.string
+* @ref https://github.com/epeli/underscore.string
 */
+/*String.prototype.underscore = null;*/
 Object.defineProperty(String.prototype, "underscore", {
     enumerable: false, configurable: false, writable: false,
     value: function() {
@@ -590,6 +628,7 @@ Object.defineProperty(String.prototype, "underscore", {
 * @example
 *   '&lt;div&gt;hi&lt;/div&gt;'.unescapeHTML(); //<div>hi</div>
 */
+/*String.prototype.unescapeHTML = null;*/
 Object.defineProperty(String.prototype, "unescapeHTML", {
     enumerable: false, configurable: false, writable: false,
     value: function() { //from underscore.string
@@ -615,6 +654,7 @@ Object.defineProperty(String.prototype, "unescapeHTML", {
 * @example
 *   "line 1\nline2".nl2br(); //line 1<br/>line 2
 */
+/*String.prototype.nl2br = null;*/
 Object.defineProperty(String.prototype, "nl2br", {
     enumerable: false, configurable: false, writable: false,
     value: function(){
@@ -629,8 +669,9 @@ Object.defineProperty(String.prototype, "nl2br", {
 * @example
 *   "{0} is dead, but {1} is alive!".format("ASP", "ASP.NET") //"ASP is dead, but ASP.NET is alive!"
 *   "This is a test {test}".format({test: "utils"});      //This is a test utils
-* @see String.template
+* @ref /__proto__/docs/source/__proto__.html#method-String-template String.template
 */
+/*String.prototype.format = null;*/
 Object.defineProperty(String.prototype, "format", {
     enumerable: false, configurable: false, writable: false,
     value: function () {
@@ -657,6 +698,7 @@ Object.defineProperty(String.prototype, "format", {
 *   "0,01".toNumber(); //0.01
 *   "1".toNumber(); //1
 */
+/*String.prototype.toNumber = null;*/
 Object.defineProperty(String.prototype, "toNumber", {
     enumerable: false, configurable: false, writable: false,
     value: function () {
@@ -676,17 +718,21 @@ Object.defineProperty(String.prototype, "toNumber", {
         return value;
     }
 });
-
+/**
+* @class Array Array.prototype
+* @namespace __proto__
+* @singleton
+*/
 /**
 * Array.prototype.[method name] allows you to define/overwrite an objects method
 * needle is the item you are searching for
 * this is a special variable that refers to "this" instance of an Array.
-* @class Array
 * @method
 * @return {boolean} true if needle is in the array, and false otherwise 
 * @example
 *   [1,3,5,7,9].contains(3); //true
 */
+/*Array.prototype.contains = null;*/
 Object.defineProperty(Array.prototype, "contains", {
     enumerable: false, configurable: false, writable: false,
     value: function (needle) {
@@ -696,11 +742,6 @@ Object.defineProperty(Array.prototype, "contains", {
         return false;
     }
 });
-/**
-* @class Array Array.prototype
-* @namespace Array
-* @singleton
-*/
 /**
 * Return agruped array 
 * @method
@@ -719,8 +760,9 @@ Object.defineProperty(Array.prototype, "contains", {
 *       {key: 2, values: [{ "day": 2, "value", 90 }, { "day": 2, "value", 90 }]},
 *       {key: 3, values: [{ "day": 3, "value", 10 }]}
 *   ]
-* @see http://stackoverflow.com/questions/1267158/javascript-dynamic-grouping
+* @ref http://stackoverflow.com/questions/1267158/javascript-dynamic-grouping
 */
+/*Array.prototype.groupBy = null;*/
 Object.defineProperty(Array.prototype, "groupBy", {
     enumerable: false, configurable: false, writable: false,
     value: function (property) {
